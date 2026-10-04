@@ -1,0 +1,59 @@
+:root {
+  --bg: #f4f7f8; --ink: #13262f; --muted: #5a6d76; --card: #fff;
+  --accent: #0b6e66; --accent-dark: #084f49; --line: #d8e1e5;
+  --ok: #17663a; --ok-bg: #e2f4e9; --bad: #9b1c1c; --bad-bg: #fbe5e5;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: "Figtree", system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
+a { color: inherit; }
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5vw; background: var(--card); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; }
+.logo { font-weight: 800; text-decoration: none; font-size: 1.15rem; }
+.nav nav a { margin-left: 1.25rem; text-decoration: none; color: var(--muted); font-weight: 500; }
+.nav nav a:hover { color: var(--accent); }
+.hero { padding: 5rem 5vw 4rem; max-width: 52rem; }
+.hero h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); line-height: 1.05; margin: 0 0 1rem; font-weight: 800; letter-spacing: -0.02em; }
+.hero p { font-size: 1.15rem; color: var(--muted); max-width: 36rem; }
+.section { padding: 2.5rem 5vw; max-width: 64rem; }
+.section h2 { margin: 0 0 1.25rem; font-size: 1.6rem; }
+.btn { display: inline-block; background: var(--accent); color: #fff; border: 0; padding: .8rem 1.6rem; border-radius: 8px; font: inherit; font-weight: 700; cursor: pointer; text-decoration: none; }
+.btn:hover { background: var(--accent-dark); }
+.btn:disabled { opacity: .6; cursor: wait; }
+.btn.small { padding: .5rem 1rem; }
+.link { background: none; border: 0; color: var(--accent); font: inherit; cursor: pointer; text-decoration: underline; }
+form#booking-form { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 1.5rem; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem 1.25rem; margin-bottom: 1rem; }
+label { display: block; font-weight: 500; font-size: .95rem; margin-bottom: 1rem; }
+.grid label { margin-bottom: 0; }
+input, select, textarea { width: 100%; margin-top: .3rem; padding: .65rem .75rem; border: 1px solid var(--line); border-radius: 8px; font: inherit; background: #fff; color: var(--ink); }
+input:focus, select:focus, textarea:focus, .btn:focus-visible, .link:focus-visible { outline: 3px solid #7cc5bd; outline-offset: 1px; }
+input.invalid, select.invalid { border-color: var(--bad); }
+.error { color: var(--bad); display: block; min-height: 1.1em; font-weight: 400; }
+.message { padding: .8rem 1rem; border-radius: 8px; margin-bottom: 1rem; font-weight: 500; }
+.message.success { background: var(--ok-bg); color: var(--ok); }
+.message.error-msg { background: var(--bad-bg); color: var(--bad); }
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; }
+.service { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 8px; padding: 1rem 1.1rem; }
+.service h3 { margin: 0 0 .25rem; font-size: 1.05rem; }
+.service p { margin: 0; color: var(--muted); font-size: .95rem; }
+.row { display: flex; justify-content: space-between; align-items: baseline; }
+#login-form { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+#login-form input { width: auto; flex: 1 1 12rem; margin: 0; }
+.table-wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
+table { width: 100%; border-collapse: collapse; min-width: 34rem; }
+th, td { text-align: left; padding: .7rem 1rem; border-bottom: 1px solid var(--line); font-size: .95rem; }
+th { color: var(--muted); font-weight: 500; }
+tr:last-child td { border-bottom: 0; }
+.badge { padding: .15rem .6rem; border-radius: 99px; font-size: .85rem; background: #e8eef0; }
+.badge.confirmed { background: var(--ok-bg); color: var(--ok); }
+.badge.cancelled { background: var(--bad-bg); color: var(--bad); }
+.badge.pending { background: #fff1d6; color: #7a5200; }
+.empty { padding: 2rem; text-align: center; color: var(--muted); }
+td button { background: none; border: 0; color: var(--bad); cursor: pointer; font: inherit; }
+td select { margin: 0; padding: .3rem; width: auto; }
+footer { text-align: center; padding: 2rem; color: var(--muted); border-top: 1px solid var(--line); margin-top: 2rem; }
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .nav nav a { margin-left: .8rem; }
+  .hero { padding-top: 3rem; }
+}
